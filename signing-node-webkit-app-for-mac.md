@@ -42,12 +42,16 @@ Admin or Member:
 ```
 $ app="Your\ App.app"
 $ identity="User ID" # (pasted from clipboard)
+$ codesign --force --verify --verbose --sign "$identity" "$app"
+```
+
+Note: We used to run the following commands too, but those files does not exist any more in latest nw.js build.
+```
 $ codesign --force --verify --verbose --sign "$identity" "$app/Contents/Frameworks/crash_inspector"
 $ codesign --force --verify --verbose --sign "$identity" "$app/Contents/Frameworks/nwjs Framework.framework"
 $ codesign --force --verify --verbose --sign "$identity" "$app/Contents/Frameworks/nwjs Helper EH.app"
 $ codesign --force --verify --verbose --sign "$identity" "$app/Contents/Frameworks/nwjs Helper NP.app"
 $ codesign --force --verify --verbose --sign "$identity" "$app/Contents/Frameworks/nwjs Helper.app"
-$ codesign --force --verify --verbose --sign "$identity" "$app"
 ```
 
 ## E. Verify Signature
